@@ -52,7 +52,18 @@ data class AnomalyEvent(
 
 data class CartItem(
     val product: Product,
-    val quantity: Int
+    val quantity: Int,
+    val isAiVerified: Boolean = false
+)
+
+data class AiVerificationResult(
+    val product: Product,
+    val confidence: Float = 0.98f,
+    val detectedYoloClass: String = "",
+    val inferenceTimeMs: Long = 142,
+    val isMatch: Boolean = true,
+    val notes: String = "",
+    val photoDescription: String = ""
 )
 
 data class Store(
